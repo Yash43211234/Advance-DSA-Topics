@@ -53,6 +53,57 @@ This README contains a collection of advanced topics in Data Structures and Algo
 
 - **Knapsack Problem (0/1 and Fractional)**: Solve optimization problems with constraints.
 - **Longest Common Subsequence (LCS)**: Find the longest common subsequence between two strings.
+
+``  
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+// Function to find LCS using Memoization (Top-Down DP)
+int LCSMemoization(string str1, string str2, int i, int j, vector<vector<int>>& memo) {
+    // Base case: if either string is exhausted, return 0
+    if (i == str1.length() || j == str2.length()) {
+        return 0;
+    }
+
+    // If the result is already computed, return it from the memoization table
+    if (memo[i][j] != -1) {
+        return memo[i][j];
+    }
+
+    // If characters match, the LCS length increases by 1
+    if (str1[i] == str2[j]) {
+        memo[i][j] = 1 + LCSMemoization(str1, str2, i + 1, j + 1, memo);
+    } else {
+        // If characters don't match, take the maximum of excluding either character
+        memo[i][j] = max(LCSMemoization(str1, str2, i + 1, j, memo), LCSMemoization(str1, str2, i, j + 1, memo));
+    }
+
+    return memo[i][j];
+}
+
+int main() {
+    string str1, str2;
+
+    // Input two strings
+    cout << "Enter first string: ";
+    cin >> str1;
+    cout << "Enter second string: ";
+    cin >> str2;
+
+    // Create a memoization table initialized with -1
+    vector<vector<int>> memo(str1.length(), vector<int>(str2.length(), -1));
+
+    // Call the LCSMemoization function and display the result
+    cout << "Length of Longest Common Subsequence: "
+         << LCSMemoization(str1, str2, 0, 0, memo)
+         << endl;
+
+    return 0;
+}
+
+``
 - **Matrix Chain Multiplication**: Optimize matrix multiplication order.
 - **Rod Cutting Problem**: Maximize profit by cutting a rod into pieces.
 - **Coin Change Problem**: Find the number of ways to make a given amount using different coins.
