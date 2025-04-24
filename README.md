@@ -52,9 +52,21 @@ This README contains a collection of advanced topics in Data Structures and Algo
 [Code Section for Dynamic Programming](#code-for-dynamic-programming)
 
 - **Knapsack Problem (0/1 and Fractional)**: Solve optimization problems with constraints.
-- **Longest Common Subsequence (LCS)**: Find the longest common subsequence between two strings.
+# Advanced DSA Topics
 
-``  
+## 📚 Index
+
+- [Longest Common Subsequence (LCS)](#longest-common-subsequence-lcs)
+
+---
+
+## 🔸 Longest Common Subsequence (LCS)
+
+> Find the longest common subsequence between two strings using Memoization (Top-Down Dynamic Programming).
+
+### 🔧 Code
+
+```cpp
 #include <iostream>
 #include <vector>
 #include <string>
@@ -93,7 +105,7 @@ int main() {
     cin >> str2;
 
     // Create a memoization table initialized with -1
-    vector<vector<int>> memo(str1.length(), vector<int>(str2.length(), -1));
+    vector<vector<int>> memo(str1.length() + 1, vector<int>(str2.length() + 1, -1));
 
     // Call the LCSMemoization function and display the result
     cout << "Length of Longest Common Subsequence: "
@@ -102,8 +114,7 @@ int main() {
 
     return 0;
 }
-
-``
+```
 - **Matrix Chain Multiplication**: Optimize matrix multiplication order.
 - **Rod Cutting Problem**: Maximize profit by cutting a rod into pieces.
 - **Coin Change Problem**: Find the number of ways to make a given amount using different coins.
