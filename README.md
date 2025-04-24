@@ -52,15 +52,10 @@ This README contains a collection of advanced topics in Data Structures and Algo
 [Code Section for Dynamic Programming](#code-for-dynamic-programming)
 
 - **Knapsack Problem (0/1 and Fractional)**: Solve optimization problems with constraints.
-# Advanced DSA Topics
-
-## 📚 Index
-
-- [Longest Common Subsequence (LCS)](#longest-common-subsequence-lcs)
 
 ---
 
-## 🔸 Longest Common Subsequence (LCS)
+# [Longest Common Subsequence (LCS)](#longest-common-subsequence-lcs)
 
 > Find the longest common subsequence between two strings using Memoization (Top-Down Dynamic Programming).
 
